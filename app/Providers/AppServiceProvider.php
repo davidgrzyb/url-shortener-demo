@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\D1Connector\L1ServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,14 +12,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->register(L1ServiceProvider::class);
     }
 
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
-    {
-        //
-    }
+    public function boot(): void {}
 }
